@@ -12,7 +12,8 @@
     "delete": "node src/fs/delete",
     "list": "node src/fs/list",
     "read": "node src/fs/read",
-    "rename": "node src/fs/rename"
+    "rename": "node src/fs/rename",
+    "cjs": "node src/modules/cjsToEsm.mjs"
   },
   "repository": {
     "type": "git",
