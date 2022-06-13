@@ -1,23 +1,24 @@
+import { pathToFile } from '../pathToFile.js';
+import { access, writeFile } from 'node:fs';
+
 export const create = async () => {
     // Write your code here 
-    const fs = require('fs');
-    const path = require('path');
-
-    fs.access(
-        path.join(__dirname, 'files', 'fresh.txt'),
+    access(
+        pathToFile(import.meta.url, 'files', 'fresh.txt'),
         (err) => {
             if (err) {
-                fs.writeFile(
-                    path.join(__dirname, 'files', 'fresh.txt'),
+                writeFile(
+                    pathToFile(import.meta.url, 'files', 'fresh.txt'),
                     'I am fresh and young',
                     (err) => {
                         if (err) return console.error('FS operation failed');
-                        console.log('Файл был создан');
+                        console.log('File was created');
                     }
                 );
             } else {
-                console.log('FS operation failed / Файл уже существует');
+                console.log('FS operation failed / File already exist');
             }
         }
     )
 };
+create();

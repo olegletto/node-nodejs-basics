@@ -1,10 +1,11 @@
+import { readdir } from 'node:fs'
+import { pathToFolder } from '../pathToFile.js';
+
 export const list = async () => {
     // Write your code here 
-    const fs = require('fs');
-    const path = require('path');
 
-    fs.readdir(
-        path.join(__dirname, 'files'),
+    readdir(
+        pathToFolder(import.meta.url, 'files'),
         (err, files) => {
             if (err)
                 console.error('FS operation failed');
@@ -15,3 +16,5 @@ export const list = async () => {
             }
         })
 };
+
+list();

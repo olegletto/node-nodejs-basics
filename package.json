@@ -2,8 +2,17 @@
   "name": "node-nodejs-basics",
   "version": "1.0.0",
   "description": "This repository is the part of nodejs-assignments https://github.com/AlreadyBored/nodejs-assignments",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "args": "node src/cli/args --propName value --prop2Name value2",
+    "env": "node src/cli/env",
+    "copy": "node src/fs/copy",
+    "create": "node src/fs/create",
+    "delete": "node src/fs/delete",
+    "list": "node src/fs/list",
+    "read": "node src/fs/read",
+    "rename": "node src/fs/rename"
   },
   "repository": {
     "type": "git",

@@ -1,13 +1,16 @@
+import { rm } from 'node:fs';
+import { pathToFile } from '../pathToFile.js';
+
 export const remove = async () => {
     // Write your code here 
-    const fs = require('fs');
-    const path = require('path');
 
-    fs.rm(
-        path.join(__dirname, 'files', 'fileToRemove.txt'),
+    rm(
+        pathToFile(import.meta.url, 'files', 'fileToRemove.txt'),
         err => {
             if (err) return console.error('FS operation failed');
             console.log('File deleted');
         }
     );
 };
+
+remove();

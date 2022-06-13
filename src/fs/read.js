@@ -1,10 +1,11 @@
- export const read = async () => {
-    // Write your code here 
-    const fs = require('fs');
-    const path = require('path'); 
+import { readFile } from 'node:fs';
+import { pathToFile } from '../pathToFile.js';
 
-    fs.readFile(
-        path.join(__dirname, 'files', 'fileToRead.txt'),
+export const read = async () => {
+    // Write your code here 
+
+    readFile(
+        pathToFile(import.meta.url, 'files', 'fileToRead.txt'),
         'utf-8',
         (err, data) => {
             if (err) return console.error('FS operation failed');
@@ -12,3 +13,4 @@
         }
     );
 };
+read();

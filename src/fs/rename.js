@@ -1,14 +1,17 @@
-export const rename = async () => {
-    // Write your code here
-    const fs = require('fs');
-    const path = require('path');
+import { rename } from 'node:fs';
+import { pathToFile } from '../pathToFile.js';
 
-    fs.rename(
-        path.join(__dirname, 'files', 'wrongFilename.txt'),
-        path.join(__dirname, 'files', 'properFilename.md'),
+export const renameFile = async () => {
+    // Write your code here
+
+    rename(
+        pathToFile(import.meta.url, 'files', 'wrongFilename.txt'),
+        pathToFile(import.meta.url, 'files', 'properFilename.md'),
         err => {
             if (err) return console.error('FS operation failed');
-            console.log('Файл переименован');
+            console.log('The file has been renamed');
         }
     );
 };
+
+renameFile();
