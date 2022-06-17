@@ -19,7 +19,8 @@
     "streamWrite": "node src/streams/write",
     "transform": "node src/streams/transform",
     "compress": "node src/zip/compress",
-    "decompress": "node src/zip/decompress"
+    "decompress": "node src/zip/decompress",
+    "main": "node src/wt/main"
   },
   "repository": {
     "type": "git",
