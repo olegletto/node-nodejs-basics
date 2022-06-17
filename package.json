@@ -14,7 +14,10 @@
     "read": "node src/fs/read",
     "rename": "node src/fs/rename",
     "cjs": "node src/modules/cjsToEsm.mjs",
-    "hash": "node src/hash/calcHash"
+    "hash": "node src/hash/calcHash",
+    "streamRead": "node src/streams/read",
+    "streamWrite": "node src/streams/write",
+    "transform": "node src/streams/transform"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { release, version } from 'os';
 import { createServer as createServerHttp } from 'http';
-// import './files/c'
+import './files/c.js'
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
